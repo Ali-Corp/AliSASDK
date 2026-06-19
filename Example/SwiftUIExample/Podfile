@@ -1,0 +1,14 @@
+platform :ios, '15.0'
+
+target 'ALISASDKSwiftUIExample' do
+  use_frameworks!
+  pod 'AliSASDK', :path => '../..'
+end
+
+target 'ALISASDKSwiftUIExampleTests' do
+  inherit! :search_paths
+end
+
+target 'ALISASDKSwiftUIExampleUITests' do
+  inherit! :search_paths
+end
