@@ -15,7 +15,8 @@ let package = Package(
         .library(
             name: "AliSASDK",
             targets: [
-                "AliSASDK"
+                "AliSASDK",
+                "AliSASDKRemoteDependencies",
             ]
         ),
     ],
@@ -29,5 +30,18 @@ let package = Package(
     targets: [
         // ── First-party prebuilt xcframework ───────────────────────────────
         .binaryTarget(name: "AliSASDK", path: "iOS/AliSASDK.xcframework"),
+
+        // ── Carrier target: wires remote deps into the product ─────────────
+        .target(
+            name: "AliSASDKRemoteDependencies",
+            dependencies: [
+                .product(name: "AliMiniAppSDK",          package: "AliMiniAppSDK"),
+                .product(name: "CodeScanner",            package: "CodeScanner"),
+                .product(name: "NavigationStackBackport", package: "navigation-stack-backport"),
+                .product(name: "ExyteMediaPicker",       package: "MediaPicker"),
+                .product(name: "CropViewController",     package: "TOCropViewController"),
+            ],
+            path: "Sources/AliSASDKRemoteDependencies"
+        ),
     ]
 )
