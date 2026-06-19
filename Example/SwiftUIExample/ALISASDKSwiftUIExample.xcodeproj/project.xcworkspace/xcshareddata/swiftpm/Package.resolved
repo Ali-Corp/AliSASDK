@@ -2,12 +2,21 @@
   "originHash" : "5c5107a70b876322a369756a480cc05ba351f35f60098f7e02d408f6eaaa4356",
   "pins" : [
     {
+      "identity" : "aliminiappsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Ali-Corp/AliMiniAppSDK.git",
+      "state" : {
+        "branch" : "dev",
+        "revision" : "efc605d5be9a68d1163a0084e35840e3775cacb0"
+      }
+    },
+    {
       "identity" : "alisasdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Ali-Corp/AliSASDK",
       "state" : {
         "branch" : "dev",
-        "revision" : "0f332afb476ae1f5f82bada1baccb4f53137ff9e"
+        "revision" : "5e5b6bef1061aecb65381aa4039ae5c272245549"
       }
     },
     {

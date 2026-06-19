@@ -22,10 +22,10 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Ali-Corp/AliMiniAppSDK.git", branch: "dev"),
-        .package(url: "https://github.com/twostraws/CodeScanner.git", from: "2.5.2"),
-        .package(url: "https://github.com/lm/navigation-stack-backport.git", from: "1.1.0"),
-        .package(url: "https://github.com/exyte/MediaPicker.git", from: "2.2.4"),
-        .package(url: "https://github.com/TimOliver/TOCropViewController.git", from: "2.8.0"),
+        // .package(url: "https://github.com/twostraws/CodeScanner.git", from: "2.5.2"),
+        // .package(url: "https://github.com/lm/navigation-stack-backport.git", from: "1.1.0"),
+        // .package(url: "https://github.com/exyte/MediaPicker.git", from: "2.2.4"),
+        // .package(url: "https://github.com/TimOliver/TOCropViewController.git", from: "2.8.0"),
     ],
     targets: [
         // ── First-party prebuilt xcframework ───────────────────────────────
@@ -36,10 +36,10 @@ let package = Package(
             name: "AliSASDKRemoteDependencies",
             dependencies: [
                 .product(name: "AliMiniAppSDK",          package: "AliMiniAppSDK"),
-                .product(name: "CodeScanner",            package: "CodeScanner"),
-                .product(name: "NavigationStackBackport", package: "navigation-stack-backport"),
-                .product(name: "ExyteMediaPicker",       package: "MediaPicker"),
-                .product(name: "CropViewController",     package: "TOCropViewController"),
+                // .product(name: "CodeScanner",            package: "CodeScanner"),
+                // .product(name: "NavigationStackBackport", package: "navigation-stack-backport"),
+                // .product(name: "ExyteMediaPicker",       package: "MediaPicker"),
+                // .product(name: "CropViewController",     package: "TOCropViewController"),
             ],
             path: "Sources/AliSASDKRemoteDependencies"
         ),

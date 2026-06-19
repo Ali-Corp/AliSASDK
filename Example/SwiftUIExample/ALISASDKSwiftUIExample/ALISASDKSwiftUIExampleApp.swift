@@ -55,15 +55,4 @@ enum ExampleSDKBootstrap {
             isPreviewMode: true
         )
     }
-
-    static func makeMiniAppSDKConfig() -> MiniAppSdkConfig {
-        MiniAppSdkConfig(
-            baseUrl: baseURL,
-            rasProjectId: projectID,
-            subscriptionKey: subscriptionKey,
-            hostAppVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-                ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
-            isPreviewMode: true
-        )
-    }
 }
