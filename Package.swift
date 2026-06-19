@@ -32,6 +32,8 @@ let package = Package(
         .binaryTarget(name: "AliSASDK", path: "iOS/AliSASDK.xcframework"),
 
         // ── Carrier target: wires remote deps into the product ─────────────
+        // Also ships AliSASDK_AliSASDK.bundle so Bundle.module in the binary
+        // xcframework resolves correctly at runtime via Bundle.main.resourceURL.
         .target(
             name: "AliSASDKRemoteDependencies",
             dependencies: [
@@ -41,7 +43,8 @@ let package = Package(
                 .product(name: "ExyteMediaPicker",       package: "MediaPicker"),
                 .product(name: "CropViewController",     package: "TOCropViewController"),
             ],
-            path: "Sources/AliSASDKRemoteDependencies"
+            path: "Sources/AliSASDKRemoteDependencies",
+            resources: [.copy("AliSASDK_AliSASDK.bundle")]
         ),
     ]
 )
