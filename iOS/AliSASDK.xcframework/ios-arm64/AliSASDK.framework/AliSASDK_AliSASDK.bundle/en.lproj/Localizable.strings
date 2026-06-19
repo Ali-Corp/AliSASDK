@@ -1,0 +1,49 @@
+/* SDK Localization — English */
+
+/* Buttons */
+"btn_retry" = "Retry";
+"btn_close" = "Close";
+"btn_ok" = "OK";
+"btn_login" = "Log In";
+"btn_confirm" = "Confirm";
+"btn_continue" = "Continue";
+"btn_got_it" = "Got it";
+"btn_detail" = "Detail";
+"btn_select_qr_photo" = "Select QR Photo";
+"btn_update" = "Update";
+"btn_ignore" = "Ignore";
+
+/* Alerts */
+"alert_default_title" = "Alert";
+"alert_require_login_title" = "Login Required";
+"alert_require_login_message" = "Please log in to use this feature";
+"alert_no_internet_message" = "No internet connection. Please try again.";
+"alert_stwr_message" = "Something went wrong. Please try again later.";
+"alert_miniapp_update_available_title" = "Update available";
+"alert_miniapp_update_available_message" = "An update is available. Would you like to install it?";
+
+/* Action Sheets */
+"action_sheet_select_phone_title" = "Select Phone number";
+"action_sheet_select_image_title" = "Select Image";
+"action_sheet_select_image_message" = "Please select an image from the image gallery or use the camera";
+"action_sheet_select_image_item_camera" = "Camera";
+"action_sheet_select_image_item_gallery" = "Photo Gallery";
+
+/* MiniApp Permissions */
+"mini_app_permission_user_info_title" = "User Info";
+"mini_app_permission_location_title" = "Device Location";
+"mini_app_permission_file_download_title" = "File Download";
+"mini_app_permission_title_require" = "Required";
+"mini_app_permission_provider" = "Provider";
+"mini_app_permission_required_permission" = "Required Permission";
+"mini_app_permission_important_notice" = "Important Notice";
+"mini_app_permission_screen_title" = "Grant access";
+"mini_app_permission_screen_description_format" = "To use %@, please allow us to access the information below.";
+"mini_app_permission_screen_description_default" = "Please allow us to access the information below to use this mini app.";
+"mini_app_permission_service_provider" = "Service provider";
+"mini_app_permission_user_info_title_compact" = "User information";
+"mini_app_permission_location_title_compact" = "Location";
+"mini_app_permission_file_download_title_compact" = "File downloads";
+"mini_app_permission_action_title" = "Grant access";
+"mini_app_reload_action_title" = "Reload";
+"mini_app_permission_provider_sheet_title" = "Service provider";
