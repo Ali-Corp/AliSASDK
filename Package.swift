@@ -44,7 +44,7 @@ let package = Package(
                 .product(name: "CropViewController",     package: "TOCropViewController"),
             ],
             path: "Sources/AliSASDKRemoteDependencies",
-            resources: [.copy("AliSASDK_AliSASDK.bundle")]
+            resources: [.process("resources")]
         ),
     ]
 )
