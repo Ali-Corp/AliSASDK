@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "aliminiappsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Ali-Corp/AliMiniAppSDK.git",
+      "state" : {
+        "branch" : "dev",
+        "revision" : "be4a80b843b22bd449dee3e64b13d5711f526043"
+      }
+    },
+    {
       "identity" : "codescanner",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/twostraws/CodeScanner.git",

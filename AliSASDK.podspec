@@ -18,10 +18,9 @@ Pod::Spec.new do |s|
 
   # Vendored xcframeworks — includes CodeScanner + NavigationStackBackport because
   # those libraries are SPM-only (no CocoaPods podspec exists for them).
+  # MiniApp + MiniAppObjC now come from the remote AliMiniAppSDK pod.
   s.vendored_frameworks = [
     'iOS/AliSASDK.xcframework',
-    'iOS/MiniApp.xcframework',
-    'iOS/MiniAppObjC.xcframework',
     'iOS/CodeScanner.xcframework',
     'iOS/NavigationStackBackport.xcframework',
   ]
@@ -29,12 +28,11 @@ Pod::Spec.new do |s|
   # All vendored frameworks are static archives.
   s.static_framework = true
 
-  # Remote CocoaPods dependencies — the remaining 6 third-party libraries
-  # that ship both a podspec and a SwiftPM package.
+  # MiniApp runtime — ships the MiniApp/MiniAppObjC xcframeworks and their
+  # third-party dependencies (ZIPFoundation, TrustKit, SQLite.swift, SwiftyJSON).
+  s.dependency 'AliMiniAppSDK',     '~> 5.10'
+
+  # Remote CocoaPods dependencies used by the AliSASDK core framework.
   s.dependency 'ExyteMediaPicker',  '~> 2.2'
   s.dependency 'CropViewController','~> 2.8'
-  s.dependency 'SQLite.swift',      '~> 0.16'
-  s.dependency 'SwiftyJSON',        '~> 5.0'
-  s.dependency 'TrustKit',          '~> 2.0'
-  s.dependency 'ZIPFoundation',     '~> 0.9'
 end
