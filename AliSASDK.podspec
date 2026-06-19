@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
   # those libraries are SPM-only (no CocoaPods podspec exists for them).
   s.vendored_frameworks = [
     'iOS/AliSASDK.xcframework',
-    'iOS/AliSASDKCore.xcframework',
     'iOS/MiniApp.xcframework',
     'iOS/MiniAppObjC.xcframework',
     'iOS/CodeScanner.xcframework',

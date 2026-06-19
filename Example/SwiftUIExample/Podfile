@@ -2,7 +2,7 @@ platform :ios, '15.0'
 
 target 'ALISASDKSwiftUIExample' do
   use_frameworks!
-  pod 'AliSASDK', :path => '../..'
+
 end
 
 target 'ALISASDKSwiftUIExampleTests' do

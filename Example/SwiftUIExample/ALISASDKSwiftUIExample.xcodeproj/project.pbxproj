@@ -202,6 +202,7 @@
 			mainGroup = 8CF5A3F32F5ADE21004381DD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				8CF5A4712F5AE2D7004381DE /* XCRemoteSwiftPackageReference "AliSASDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8CF5A3FD2F5ADE21004381DD /* Products */;
@@ -587,9 +588,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		8CF5A4712F5AE2D7004381DE /* XCRemoteSwiftPackageReference "AliSASDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ali-Corp/AliSASDK";
+			requirement = {
+				branch = dev;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		8CF5A4722F5AE2D7004381DD /* AliSASDK */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 8CF5A4712F5AE2D7004381DE /* XCRemoteSwiftPackageReference "AliSASDK" */;
 			productName = AliSASDK;
 		};
 /* End XCSwiftPackageProductDependency section */

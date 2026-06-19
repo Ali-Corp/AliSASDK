@@ -215,7 +215,7 @@
 			mainGroup = 8CF5A4262F5ADE56004381DD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8CF5A4712F5AE2D7004381DD /* XCLocalSwiftPackageReference "../.." */,
+				8CF5A4712F5AE2D7004381DD /* XCRemoteSwiftPackageReference "https://github.com/Ali-Corp/AliSASDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8CF5A4302F5ADE56004381DD /* Products */;
@@ -601,16 +601,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		8CF5A4712F5AE2D7004381DD /* XCLocalSwiftPackageReference "../.." */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../..";
+/* Begin XCRemoteSwiftPackageReference section */
+		8CF5A4712F5AE2D7004381DD /* XCRemoteSwiftPackageReference "https://github.com/Ali-Corp/AliSASDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ali-Corp/AliSASDK";
+			requirement = {
+				branch = dev;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		8CF5A4722F5AE2D7004381DD /* AliSASDK */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 8CF5A4712F5AE2D7004381DD /* XCRemoteSwiftPackageReference "https://github.com/Ali-Corp/AliSASDK" */;
 			productName = AliSASDK;
 		};
 /* End XCSwiftPackageProductDependency section */

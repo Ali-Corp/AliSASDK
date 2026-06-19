@@ -15,7 +15,6 @@ let package = Package(
             name: "AliSASDK",
             targets: [
                 "AliSASDK",
-                "AliSASDKCore",
                 "MiniApp",
                 "MiniAppObjC",
                 "AliSASDKRemoteDependencies",
@@ -34,9 +33,8 @@ let package = Package(
     ],
     targets: [
         // ── First-party prebuilt xcframeworks ──────────────────────────────
-        .binaryTarget(name: "AliSASDK",     path: "iOS/AliSASDK.xcframework"),
-        .binaryTarget(name: "AliSASDKCore", path: "iOS/AliSASDKCore.xcframework"),
-        .binaryTarget(name: "MiniApp",      path: "iOS/MiniApp.xcframework"),
+        .binaryTarget(name: "AliSASDK", path: "iOS/AliSASDK.xcframework"),
+        .binaryTarget(name: "MiniApp",  path: "iOS/MiniApp.xcframework"),
         .binaryTarget(name: "MiniAppObjC",  path: "iOS/MiniAppObjC.xcframework"),
 
         // ── Carrier target: wires remote deps into the product ─────────────
