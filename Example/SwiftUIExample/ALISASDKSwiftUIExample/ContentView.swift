@@ -177,7 +177,7 @@ final class ExampleAppModel: ObservableObject {
     private func makeLoggedInUser() -> AliSASDKUserInfo {
         AliSASDKUserInfo(
             userId: "user-12345",
-            phoneNumber: "+1234567890",
+            phoneNumber: "1234567890",
             fullName: "Sample User",
             avatar: "https://example.com/avatar.png"
         )

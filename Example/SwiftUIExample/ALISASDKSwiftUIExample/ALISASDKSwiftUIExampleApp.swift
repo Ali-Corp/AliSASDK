@@ -24,6 +24,8 @@ struct ALISASDKSwiftUIExampleApp: App {
         // 3. Configure the SDK
         AliSASDK.shared.configure(sdkConfig: ExampleSDKBootstrap.makeConfiguration())
 
+        AliSASDK.shared.saveQueryParam("eruda=1")
+
         // 4. Apply brand colors
         AliSASDK.shared.updateColorScheme(ExampleSDKBootstrap.colorScheme)
 
@@ -51,8 +53,7 @@ enum ExampleSDKBootstrap {
         AliSASDKConfiguration(
             environment: .sandbox,
             projectId: projectID,
-            subscriptionKey: subscriptionKey,
-            isPreviewMode: true
+            subscriptionKey: subscriptionKey
         )
     }
 }
