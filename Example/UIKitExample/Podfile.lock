@@ -18,11 +18,12 @@ PODS:
   - ZIPFoundation (0.9.20)
 
 DEPENDENCIES:
-  - AliSASDK (from `https://github.com/Ali-Corp/AliSASDK.git`, tag `1.0.1`)
+  - AliSASDK (= 1.0.1)
 
 SPEC REPOS:
   https://github.com/Ali-Corp/PodSpecs.git:
     - AliMiniAppSDK
+    - AliSASDK
   trunk:
     - CropViewController
     - ExyteMediaPicker
@@ -31,19 +32,9 @@ SPEC REPOS:
     - TrustKit
     - ZIPFoundation
 
-EXTERNAL SOURCES:
-  AliSASDK:
-    :git: https://github.com/Ali-Corp/AliSASDK.git
-    :tag: 1.0.1
-
-CHECKOUT OPTIONS:
-  AliSASDK:
-    :git: https://github.com/Ali-Corp/AliSASDK.git
-    :tag: 1.0.1
-
 SPEC CHECKSUMS:
   AliMiniAppSDK: 1d82c82e4de126afbaa791d16cbda8ea14792e51
-  AliSASDK: 0d47cca194e90c62836c8526796bfa19ad33ce2e
+  AliSASDK: 3fb038062d080702e034b4a8f85b4ba35901d3f9
   CropViewController: 29befa222e239d392d7f0ed00f324102c8bef5c9
   ExyteMediaPicker: b4a63218f34e93060afb3c0a41b0f898048728cb
   SQLite.swift: c914f905e13b6318cdc07fd66661db14c6cdd330
@@ -51,6 +42,6 @@ SPEC CHECKSUMS:
   TrustKit: dad4c3a08248c21fcb9a3b5be3c2e2b9d4f9b973
   ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
 
-PODFILE CHECKSUM: 7ae946c07e5b4788d0d228535572d7f21fde2672
+PODFILE CHECKSUM: 085be6a01ff59083b7172c00d3b2a9af98e586e7
 
 COCOAPODS: 1.16.2
