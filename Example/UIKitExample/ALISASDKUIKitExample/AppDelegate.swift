@@ -11,8 +11,11 @@ import AliSASDK
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    /// Shared example state used by UIKit UI and SDK delegate callbacks.
+    let appModel = ExampleAppModel()
+
     /// The delegate must be retained for the SDK's lifetime.
-    let sdkDelegate = SampleSDKDelegate()
+    lazy var sdkDelegate = SampleSDKDelegate(model: appModel)
 
     func application(
         _ application: UIApplication,
@@ -26,26 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - SDK Configuration
 
     private func configureSDK() {
-        // 1. Define brand colors
-        let colorScheme = AliSASDKColorScheme(
-            primaryHex: "#E63946",
-            secondaryHex: "#457B9D"
-        )
-
-        // 2. Build configuration with sample values
         let config = UITestMiniAppHarness.shared.makeSDKConfiguration()
-            ?? AliSASDKConfiguration(
-                environment: .sandbox,
-                projectId: "superapp.demo",
-                subscriptionKey: "DemoSe6d60965fcf4d7d029de4324530eaaa37751cd714d",
-                isPreviewMode: true
-            )
+            ?? ExampleSDKBootstrap.makeConfiguration()
 
         // 3. Configure the SDK
         AliSASDK.shared.configure(sdkConfig: config)
 
+        AliSASDK.shared.saveQueryParam("eruda=1")
+
         // 4. Apply brand colors
-        AliSASDK.shared.updateColorScheme(colorScheme)
+        AliSASDK.shared.updateColorScheme(ExampleSDKBootstrap.colorScheme)
 
         // 5. Set the delegate
         AliSASDK.shared.setDelegate(sdkDelegate)
@@ -74,4 +67,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didDiscardSceneSessions sceneSessions: Set<UISceneSession>
     ) {}
+}
+
+enum ExampleSDKBootstrap {
+    static let projectID = "superapp.demo"
+    static let subscriptionKey = "DemoSe6d60965fcf4d7d029de4324530eaaa37751cd714d"
+
+    static let colorScheme = AliSASDKColorScheme(
+        primaryHex: "#E63946",
+        secondaryHex: "#457B9D"
+    )
+
+    static func makeConfiguration() -> AliSASDKConfiguration {
+        AliSASDKConfiguration(
+            environment: .sandbox,
+            projectId: projectID,
+            subscriptionKey: subscriptionKey
+        )
+    }
 }
