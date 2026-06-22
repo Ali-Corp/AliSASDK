@@ -1,0 +1,47 @@
+PODS:
+  - AliMiniAppSDK (5.10.2):
+    - SQLite.swift (~> 0.15)
+    - SwiftyJSON (~> 5.0)
+    - TrustKit (~> 2.0)
+    - ZIPFoundation (~> 0.9)
+  - AliSASDK (1.0.1):
+    - AliMiniAppSDK (= 5.10.2)
+    - CropViewController (~> 2.8)
+    - ExyteMediaPicker (~> 2.2)
+  - CropViewController (2.8.0)
+  - ExyteMediaPicker (2.2.3)
+  - SQLite.swift (0.16.0):
+    - SQLite.swift/standard (= 0.16.0)
+  - SQLite.swift/standard (0.16.0)
+  - SwiftyJSON (5.0.2)
+  - TrustKit (2.0.1)
+  - ZIPFoundation (0.9.20)
+
+DEPENDENCIES:
+  - AliSASDK (= 1.0.1)
+
+SPEC REPOS:
+  https://github.com/Ali-Corp/PodSpecs.git:
+    - AliMiniAppSDK
+    - AliSASDK
+  trunk:
+    - CropViewController
+    - ExyteMediaPicker
+    - SQLite.swift
+    - SwiftyJSON
+    - TrustKit
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  AliMiniAppSDK: 1d82c82e4de126afbaa791d16cbda8ea14792e51
+  AliSASDK: 3fb038062d080702e034b4a8f85b4ba35901d3f9
+  CropViewController: 29befa222e239d392d7f0ed00f324102c8bef5c9
+  ExyteMediaPicker: b4a63218f34e93060afb3c0a41b0f898048728cb
+  SQLite.swift: c914f905e13b6318cdc07fd66661db14c6cdd330
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
+  TrustKit: dad4c3a08248c21fcb9a3b5be3c2e2b9d4f9b973
+  ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
+
+PODFILE CHECKSUM: 085be6a01ff59083b7172c00d3b2a9af98e586e7
+
+COCOAPODS: 1.16.2
