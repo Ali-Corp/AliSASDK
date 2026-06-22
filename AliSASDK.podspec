@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AliSASDK'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'iOS SDK for integrating MiniApp functionality into ALI super-applications.'
   s.description      = <<~DESC
     AliSASDK provides a complete SwiftUI-based MiniApp runtime — including view rendering,
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/Ali-Corp/AliSASDK'
   s.license          = { type: 'Proprietary', file: 'LICENSE.md' }
-  s.author           = { 'ALI Corp' => 'dev@ali.vn' }
+  s.author           = { 'ALI Corp' => 'developer@ali.vn' }
   s.source           = { git: 'https://github.com/Ali-Corp/AliSASDK.git', tag: s.version.to_s }
 
   s.platform         = :ios, '15.0'
