@@ -7,7 +7,7 @@
       "location" : "https://github.com/Ali-Corp/AliMiniAppSDK.git",
       "state" : {
         "branch" : "dev",
-        "revision" : "025cc8fb713e2001a149e7ee40936e0788585e2e"
+        "revision" : "b2a000ba25db97679f7d3a51b2229c64d4d71e0a"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Ali-Corp/AliSASDK",
       "state" : {
         "branch" : "dev",
-        "revision" : "6e3e8ddb3576095b1cac08169eb85bdb209ac218"
+        "revision" : "11bde859d7f3707db9efabbf32de6959fb085cde"
       }
     },
     {

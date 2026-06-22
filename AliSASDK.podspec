@@ -25,12 +25,16 @@ Pod::Spec.new do |s|
     'iOS/NavigationStackBackport.xcframework',
   ]
 
+  s.resources = [
+    'iOS/AliSASDK.xcframework/ios-arm64/AliSASDK.framework/AliSASDK_AliSASDK.bundle',
+  ]
+
   # All vendored frameworks are static archives.
-  s.static_framework = true
+  s.static_framework = false
 
   # MiniApp runtime — ships the MiniApp/MiniAppObjC xcframeworks and their
   # third-party dependencies (ZIPFoundation, TrustKit, SQLite.swift, SwiftyJSON).
-  s.dependency 'AliMiniAppSDK',     '~> 5.10'
+  s.dependency 'AliMiniAppSDK',     '5.10.1'
 
   # Remote CocoaPods dependencies used by the AliSASDK core framework.
   s.dependency 'ExyteMediaPicker',  '~> 2.2'
