@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   # MiniApp runtime — ships the MiniApp/MiniAppObjC xcframeworks and their
   # third-party dependencies (ZIPFoundation, TrustKit, SQLite.swift, SwiftyJSON).
-  s.dependency 'AliMiniAppSDK',     '5.10.3'
+  s.dependency 'AliMiniAppSDK',     '5.10.4'
 
   # Remote CocoaPods dependencies used by the AliSASDK core framework.
   s.dependency 'ExyteMediaPicker',  '~> 2.2'
