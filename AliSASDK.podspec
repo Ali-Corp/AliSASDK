@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AliSASDK'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'iOS SDK for integrating MiniApp functionality into ALI super-applications.'
   s.description      = <<~DESC
     AliSASDK provides a complete SwiftUI-based MiniApp runtime — including view rendering,
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   # MiniApp runtime — ships the MiniApp/MiniAppObjC xcframeworks and their
   # third-party dependencies (ZIPFoundation, TrustKit, SQLite.swift, SwiftyJSON).
-  s.dependency 'AliMiniAppSDK',     '5.10.2'
+  s.dependency 'AliMiniAppSDK',     '5.10.3'
 
   # Remote CocoaPods dependencies used by the AliSASDK core framework.
   s.dependency 'ExyteMediaPicker',  '~> 2.2'
