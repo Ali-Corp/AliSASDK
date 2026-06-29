@@ -1,0 +1,49 @@
+/* SDK Localization — Vietnamese */
+
+/* Buttons */
+"btn_retry" = "Thử lại";
+"btn_close" = "Đóng";
+"btn_ok" = "Đồng ý";
+"btn_login" = "Đăng nhập";
+"btn_confirm" = "Xác nhận";
+"btn_continue" = "Tiếp tục";
+"btn_got_it" = "Đã hiểu";
+"btn_detail" = "Chi tiết";
+"btn_select_qr_photo" = "Chọn Ảnh QR";
+"btn_update" = "Cập nhật";
+"btn_ignore" = "Bỏ qua";
+
+/* Alerts */
+"alert_default_title" = "Thông báo";
+"alert_require_login_title" = "Yêu cầu đăng nhập";
+"alert_require_login_message" = "Vui lòng đăng nhập để sử dụng chức năng này";
+"alert_no_internet_message" = "Không có kết nối internet. Vui lòng thử lại.";
+"alert_stwr_message" = "Đã có lỗi xảy ra. Quý khách vui lòng thử lại";
+"alert_miniapp_update_available_title" = "Có bản cập nhật mới";
+"alert_miniapp_update_available_message" = "Có bản cập nhật mới. Bạn có muốn cài đặt nó không?";
+
+/* Action Sheets */
+"action_sheet_select_phone_title" = "Chọn số điện thoại";
+"action_sheet_select_image_title" = "Chọn Hình ảnh";
+"action_sheet_select_image_message" = "Vui lòng chọn một hình ảnh từ thư viện ảnh hoặc sử dụng máy ảnh";
+"action_sheet_select_image_item_camera" = "Máy ảnh";
+"action_sheet_select_image_item_gallery" = "Thư viện ảnh";
+
+/* MiniApp Permissions */
+"mini_app_permission_user_info_title" = "Thông Tin Người Dùng";
+"mini_app_permission_location_title" = "Vị trí Thiết bị";
+"mini_app_permission_file_download_title" = "Tải Xuống Tệp";
+"mini_app_permission_title_require" = "Bắt buộc";
+"mini_app_permission_provider" = "Nhà cung cấp";
+"mini_app_permission_required_permission" = "Quyền Cần Thiết";
+"mini_app_permission_important_notice" = "Thông Báo Quan Trọng";
+"mini_app_permission_screen_title" = "Cấp quyền truy cập";
+"mini_app_permission_screen_description_format" = "Để sử dụng %@, bạn cần cung cấp cho chúng tôi các thông tin bên dưới.";
+"mini_app_permission_screen_description_default" = "Để sử dụng mini app này, bạn cần cung cấp cho chúng tôi các thông tin bên dưới.";
+"mini_app_permission_service_provider" = "Đơn vị cung cấp dịch vụ";
+"mini_app_permission_user_info_title_compact" = "Thông tin người dùng";
+"mini_app_permission_location_title_compact" = "Vị trí";
+"mini_app_permission_file_download_title_compact" = "Tải xuống tệp";
+"mini_app_permission_action_title" = "Cấp quyền truy cập";
+"mini_app_reload_action_title" = "Tải lại";
+"mini_app_permission_provider_sheet_title" = "Đơn vị cung cấp dịch vụ";
