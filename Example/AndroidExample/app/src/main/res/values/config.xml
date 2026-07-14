@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Non-secret sample defaults. Override SDK credentials via Gradle properties or environment variables. -->
+    <string name="ott_app_id">sample_app</string>
+    <string name="ott_app_password">SET_VIA_LOCAL_CONFIG</string>
+    <string name="ott_app_secret">SET_VIA_LOCAL_CONFIG</string>
+    <string name="ott_env">sandbox</string>
+    <string name="url_server_api">https://ottdev.taxidayroi.vn</string>
+    <string name="url_server_ws">wss://ottdev.taxidayroi.vn</string>
+    <string name="turn_server_ws">coturnstag.taxidayroi.vn:3478</string>
+    <string name="miniapp_deeplink_scheme">taxithienduc</string>
+    <string name="max_storage_size_limit">5242880</string>
+</resources>

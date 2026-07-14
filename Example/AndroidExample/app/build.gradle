@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'com.google.devtools.ksp'
+    id 'dagger.hilt.android.plugin'
+}
+
+def localProperty = { String name, String defaultValue = "" ->
+    return providers.gradleProperty(name)
+        .orElse(providers.environmentVariable(name))
+        .orElse(defaultValue)
+        .get()
+}
+
+def escapeBuildConfig = { String value ->
+    value.replace("\\", "\\\\").replace('"', '\\"')
+}
+
+android {
+    namespace 'vn.ali.sa.sample'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "vn.ali.sa.sample"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "SDK_PROJECT_ID", '"' + escapeBuildConfig(localProperty("ALISA_SAMPLE_SDK_PROJECT_ID", "")) + '"'
+        buildConfigField "String", "SDK_SUBSCRIPTION_KEY", '"' + escapeBuildConfig(localProperty("ALISA_SAMPLE_SDK_SUBSCRIPTION_KEY", "")) + '"'
+        buildConfigField "String", "HOST_BASE_URL", '"' + escapeBuildConfig(localProperty("ALISA_SAMPLE_HOST_BASE_URL", "https://apihoststag.taxidayroi.vn")) + '"'
+        buildConfigField "String", "COMPANY_ID", '"' + escapeBuildConfig(localProperty("ALISA_SAMPLE_COMPANY_ID", "30")) + '"'
+
+        resValue "string", "host_app_stag_url", escapeBuildConfig(localProperty("ALISA_SAMPLE_HOST_BASE_URL", "https://apihoststag.taxidayroi.vn"))
+        resValue "string", "host_project_stag_id", escapeBuildConfig(localProperty("ALISA_SAMPLE_SDK_PROJECT_ID", ""))
+        resValue "string", "host_app_stag_subscription", escapeBuildConfig(localProperty("ALISA_SAMPLE_SDK_SUBSCRIPTION_KEY", ""))
+        resValue "string", "companyId", escapeBuildConfig(localProperty("ALISA_SAMPLE_COMPANY_ID", "30"))
+
+        manifestPlaceholders = [
+             hostBaseUrl                 : "@string/host_app_stag_url",
+             miniAppBaseUrl              : "https://apiminiappstorestag.taxidayroi.vn/sdk-api/",
+            isPreviewMode               : "true",
+            requireSignatureVerification: "false",
+            hostAppUserAgentInfo        : "MiniApp Sample/1.0.0",
+             projectId                   : "@string/host_project_stag_id",
+             subscriptionKey             : "@string/host_app_stag_subscription",
+            ratEndpoint                 : "https://www.example.com/",
+            ratAcc                      : "0",
+            ratAid                      : "0",
+            sslPublicKey                : "",
+            enableH5Ads                 : "true",
+             maxStorageSizeLimitInBytes  : "5242880"
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation 'vn.ali.sa:alisa-sdk:1.2.1'
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.57"
+    ksp "com.google.dagger:hilt-android-compiler:2.57"
+
+    // Compose BOM
+    def composeBom = platform('androidx.compose:compose-bom:2024.02.00')
+    implementation composeBom
+
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.activity:activity-compose:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.2.0'
+
+    // AndroidX
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // Debug
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}

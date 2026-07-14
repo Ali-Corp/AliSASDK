@@ -1,0 +1,92 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+def legacyHostProperties = new Properties()
+def legacyHostGradleProperties = file("/Users/minhduc/Desktop/Project/CompanyProject/HostApp/Android Host App/gradle.properties")
+if (legacyHostGradleProperties.exists()) {
+    legacyHostGradleProperties.withInputStream { legacyHostProperties.load(it) }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        def defaultLocalRepo = file("/Users/minhduc/Desktop/Project/CompanyProject/HostApp/Android Host App/build/repo")
+        def sdkLocalRepo = providers.gradleProperty("alisaSdkLocalRepo")
+            .orElse(providers.environmentVariable("ALISA_SDK_LOCAL_REPO"))
+            .orElse(defaultLocalRepo.exists() ? defaultLocalRepo.absolutePath : "")
+            .orNull
+
+        if (sdkLocalRepo) {
+            maven {
+                name = "AlisaSdkLocal"
+                url = uri(sdkLocalRepo)
+                content {
+                    includeGroupByRegex "vn\\.ali\\..*"
+                }
+            }
+        }
+
+        def githubPackagesUser = providers.gradleProperty("githubPackagesUser")
+            .orElse(providers.environmentVariable("GITHUB_ACTOR"))
+        def githubPackagesToken = providers.gradleProperty("githubPackagesToken")
+            .orElse(providers.environmentVariable("GITHUB_TOKEN"))
+            .orElse(providers.provider { legacyHostProperties.getProperty("GITHUB_TOKEN") ?: "" })
+        def gitLab377Token = providers.gradleProperty("gitLabToken")
+            .orElse(providers.environmentVariable("GITLAB_377_TOKEN"))
+            .orElse(providers.gradleProperty("PRIVATE_TOKEN_377"))
+            .orElse(providers.environmentVariable("PRIVATE_TOKEN_377"))
+            .orElse(providers.provider { legacyHostProperties.getProperty("PRIVATE_TOKEN_377") ?: "" })
+
+        if (!sdkLocalRepo) {
+            maven {
+                name = "AliSASDK"
+                url = uri("https://maven.pkg.github.com/Ali-Corp/AliSASDK")
+                credentials {
+                    username = githubPackagesUser.orNull ?: "x-access-token"
+                    password = githubPackagesToken.orNull
+                }
+                content {
+                    includeGroup "vn.ali.sa"
+                }
+            }
+        }
+
+        maven {
+            name = "AliInternalGitLab377"
+            url = uri("https://gitlab.ali.vn/api/v4/projects/377/packages/maven")
+            credentials(HttpHeaderCredentials) {
+                name = "PRIVATE-TOKEN"
+                value = gitLab377Token.orNull ?: ""
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+            content {
+                includeGroupByRegex("vn\\.ali\\..*")
+            }
+        }
+
+        maven {
+            name = "AliOTT"
+            url = uri("https://maven.pkg.github.com/Ali-Corp/AliOTT")
+            credentials {
+                username = githubPackagesUser.orNull ?: ""
+                password = githubPackagesToken.orNull
+            }
+            content {
+                includeGroup "vn.ali.ott"
+            }
+        }
+    }
+}
+
+rootProject.name = "alisa-sample-app"
+include(":app")

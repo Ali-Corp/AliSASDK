@@ -1,0 +1,21 @@
+.gradle/
+.kotlin/
+build/
+*/build/
+local.properties
+
+# Android/Gradle outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+captures/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store

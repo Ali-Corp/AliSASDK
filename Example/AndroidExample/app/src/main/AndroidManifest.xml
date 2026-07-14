@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".SampleApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ActivitySampleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".ComposeSampleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- SDK facade/runtime reads these values after manifest merge from :alisa-sdk. -->
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.BaseUrl"
+            android:value="${hostBaseUrl}" />
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.IsPreviewMode"
+            android:value="${isPreviewMode}" />
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.RequireSignatureVerification"
+            android:value="${requireSignatureVerification}" />
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.HostAppUserAgentInfo"
+            android:value="${hostAppUserAgentInfo}" />
+        <meta-data
+            android:name="vn.ali.sdk.ras.ProjectId"
+            android:value="${projectId}" />
+        <meta-data
+            android:name="vn.ali.sdk.ras.ProjectSubscriptionKey"
+            android:value="${subscriptionKey}" />
+        <meta-data
+            android:name="vn.ali.sdk.analytics.RATAccountId"
+            android:value="${ratAcc}" />
+        <meta-data
+            android:name="vn.ali.sdk.analytics.RATApplicationId"
+            android:value="${ratAid}" />
+        <meta-data
+            android:name="vn.ali.sdk.analytics.RATEndpoint"
+            android:value="${ratEndpoint}" />
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.EnableH5Ads"
+            android:value="${enableH5Ads}" />
+        <meta-data
+            android:name="vn.ali.sdk.miniapp.MaxStorageSizeLimitInBytes"
+            android:value="@string/max_storage_size_limit" />
+
+        <!-- Sample host FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
